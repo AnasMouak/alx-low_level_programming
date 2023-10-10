@@ -5,19 +5,19 @@
  * _abs - Check main
  * @r: An integre input
  * Description: This function returns absolute value of a number
- * Return: Absolut value of number i
+ * Return: Absolut value of number r
  */
 
-int _abs(int i)
+int _abs(int r)
 {
 
-if (i < 0)
+if (r < 0)
 {
-return (-i);
+return (-r);
 }
 else
 {
-return (i);
+return (r);
 }
 _putchar('\n');
 return (0);

@@ -5,7 +5,7 @@
  * _abs - Check main
  * @r: An integre input
  * Description: This function returns absolute value of a number
- * Return: Absolut value of number r
+ * Return: Absolut value of number i
  */
 
 int _abs(int i)

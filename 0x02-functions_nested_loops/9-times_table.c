@@ -17,7 +17,10 @@ for (j = 0; j < 10; j++)
 int v = i * j;
 if (v < 10)
 {
+if (j != 0)
+{
 _putchar(' ');
+}
 _putchar(v  + '0');
 if (j == 9)
 {

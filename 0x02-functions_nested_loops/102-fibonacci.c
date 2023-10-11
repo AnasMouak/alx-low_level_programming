@@ -13,11 +13,9 @@ int n = 50;
 long int n1 = 0, n2 = 1;
 long int fib;
 
-printf("%li, %li", n1, n2);
-
-for (i = 3; i <= n; i++)
+for (i = 1; i <= n; i++)
 {
-if (i != 51)
+if (i != 51 && i != 1)
 {
 printf(", ");
 }

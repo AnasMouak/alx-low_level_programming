@@ -8,27 +8,25 @@
 
 int main(void)
 {
-long long number = 612852475143;
-long long largestPrime = -1;
+long number = 612852475143;
+long divisor;
 
-while (number % 2 == 0)
+while (divisor < (number / 2))
 {
-largestPrime = 2;
+if ((number % 2) == 0)
+{
 number /= 2;
+continue;
 }
-for (long long i = 3; i * i <= number; i += 2)
+for (divisor = 3; divisor < (number / 2); divisor += 2)
 {
-while (number % i == 0)
+if (number % divisor == 0)
 {
-largestPrime = i;
-number /= i;
+number /= divisor;
 }
 }
-if (number > 1)
-{
-largestPrime = number;
 }
-printf("%lld\n", largestPrime);
+printf("%ld\n", number);
 
 return (0);
 }

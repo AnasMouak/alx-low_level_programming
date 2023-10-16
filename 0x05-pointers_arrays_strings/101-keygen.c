@@ -8,12 +8,13 @@ int main(void)
 {
 char validChars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 int numValidChars = sizeof(validChars) - 1;
+int i;
 
 srand(time(NULL));
 
 printf("Generated Password: ");
 
-for (int i = 0; i < PASSWORD_LENGTH; i++)
+for (i = 0; i < PASSWORD_LENGTH; i++)
 {
 int index = rand() % numValidChars;
 putchar(validChars[index]);

@@ -17,7 +17,7 @@ n++;
 }
 for (i = 0; i < n / 2; i++)
 {
-tmp = s[n - i -1];
+tmp = s[n - i - 1];
 s[n - i - 1] = s[i];
 s[i] = tmp;
 }

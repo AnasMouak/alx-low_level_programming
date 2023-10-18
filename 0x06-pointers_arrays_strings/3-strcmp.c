@@ -24,5 +24,5 @@ else
 return (0);
 }
 }
-return (0);
+return (s1[i] - s2[i]);
 }

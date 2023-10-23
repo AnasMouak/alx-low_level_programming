@@ -28,7 +28,7 @@ d = 1;
 break;
 }
 }
-if (!d)
+if (d == 0)
 {
 break;
 }

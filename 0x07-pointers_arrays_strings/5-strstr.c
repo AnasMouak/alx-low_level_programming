@@ -20,13 +20,18 @@ int j;
 
 for (i = 0; haystack[i] != '\0'; i++)
 {
-
+int d = 1;
 for (j = 0; needle[j] != '\0'; j++)
 {
-if (haystack[i] == needle[j])
+if (haystack[i + j] != needle[j])
 {
-return (needle);
+d = 1;
+break;
 }
+}
+if (d)
+{
+return (haystack + i);
 }
 }
 return (0);

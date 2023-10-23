@@ -15,7 +15,6 @@ unsigned int _strspn(char *s, char *accept)
 {
 int i;
 int j;
-int n = 0;
 int d;
 
 for (i = 0; s[i] != '\0'; i++)
@@ -31,9 +30,8 @@ break;
 }
 if (!d)
 {
-return (n);
+break;
 }
-n++;
 }
 return (i);
 }

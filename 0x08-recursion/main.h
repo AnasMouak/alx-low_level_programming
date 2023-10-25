@@ -11,3 +11,4 @@ int help_number(int n, int i);
 int is_palindrome(char *s);
 int len_st(char *s);
 int help_p(char *s, int start, int end);
+int wildcmp(char *s1, char *s2);

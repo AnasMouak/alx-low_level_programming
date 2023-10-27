@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - adds positive numbers.
@@ -18,7 +19,7 @@ if (argc > 1)
 {
 for (j = 1; j < argc; j++)
 {
-if (*argv[j] >= 'a' && *argv[j] <= 'z')
+if (!isdigit(*argv[j]))
 {
 printf("Error\n");
 return (1);

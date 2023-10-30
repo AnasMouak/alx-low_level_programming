@@ -17,16 +17,22 @@ char *_strdup(char *str);
 char *_strdup(char *str)
 {
 int i;
+char *cp;
+
+if (str == 0)
+{
+return (0);
+}
+
 int size = 0;
-
-char *cp = malloc((size + 1) * sizeof(char));
-
 while (str[size] != '\0')
 {
 size++;
 }
 
-if (str == 0 || cp == 0)
+cp = malloc((size + 1) * sizeof(char));
+
+if (cp == 0)
 {
 return (0);
 }

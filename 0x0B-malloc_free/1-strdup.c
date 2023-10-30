@@ -18,13 +18,13 @@ char *_strdup(char *str)
 {
 int i;
 char *cp;
+int size = 0;
 
 if (str == 0)
 {
 return (0);
 }
 
-int size = 0;
 while (str[size] != '\0')
 {
 size++;

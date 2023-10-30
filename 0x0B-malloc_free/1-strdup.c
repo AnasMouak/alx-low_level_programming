@@ -19,7 +19,7 @@ char *_strdup(char *str)
 int i;
 int size = 0;
 
-char *cp = malloc(size * sizeof(char));
+char *cp = malloc((size + 1) * sizeof(char));
 
 while (str[size] != '\0')
 {
@@ -35,6 +35,6 @@ for (i = 0; i < size; i++)
 {
 cp[i] = str[i];
 }
-
+cp[size] = '\0';
 return (cp);
 }

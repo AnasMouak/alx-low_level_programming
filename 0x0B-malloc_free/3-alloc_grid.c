@@ -21,7 +21,7 @@ if (width <= 0 || height <= 0)
 return (0);
 }
 
-s = malloc(height * sizeof(int *));
+s = (int **)malloc(height * sizeof(int *));
 
 if (s == 0)
 {
@@ -31,7 +31,7 @@ return (0);
 
 for (i = 0; i < height; i++)
 {
-s[i] = malloc(width * sizeof(int **));
+s[i] = (int *)malloc(width * sizeof(int));
 if (s[i] == 0)
 {
 for (j = 0; j < i; j++)

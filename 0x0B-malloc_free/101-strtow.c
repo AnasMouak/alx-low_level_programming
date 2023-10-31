@@ -42,26 +42,27 @@ int wordcount(char *s)
 
 char **strtow(char *str)
 {
+  char **s, *tmp;
+  int i, j, words, k = 0, c = 0, start = 0, end, char_index;
+    
     if (str == NULL || *str == '\0')
     {
         return NULL;
     }
 
-    int words = wordcount(str);
+    words = wordcount(str);
 
     if (words == 0)
     {
         return NULL;
     }
 
-    char **s = (char **)malloc((words + 1) * sizeof(char *));
+    s = (char **)malloc((words + 1) * sizeof(char *));
     
     if (s == NULL)
     {
         return NULL;
     }
-
-    int i, k = 0, c = 0, start = 0;
     
     for (i = 0; str[i] != '\0'; i++)
     {
@@ -69,11 +70,11 @@ char **strtow(char *str)
         {
             if (c)
             {
-                char *tmp = (char *)malloc(c + 1);
+                tmp = (char *)malloc(c + 1);
                 
                 if (tmp == NULL)
                 {
-                    for (int j = 0; j < k; j++)
+                    for (j = 0; j < k; j++)
                     {
                         free(s[j]);
                     }
@@ -81,8 +82,8 @@ char **strtow(char *str)
                     return NULL;
                 }
 
-                int end = i;
-                int char_index = 0;
+                end = i;
+                char_index = 0;
                 
                 while (start < end)
                 {
@@ -103,11 +104,11 @@ char **strtow(char *str)
     
     if (c)
     {
-        char *tmp = (char *)malloc(c + 1);
+        tmp = (char *)malloc(c + 1);
         
         if (tmp == NULL)
         {
-            for (int j = 0; j < k; j++)
+            for (j = 0; j < k; j++)
             {
                 free(s[j]);
             }
@@ -115,8 +116,8 @@ char **strtow(char *str)
             return NULL;
         }
         
-        int end = i;
-        int char_index = 0;
+        end = i;
+        char_index = 0;
         
         while (start < end)
         {

@@ -25,7 +25,7 @@ if (a == 0)
 return (0);
 }
 
-for (i = min; i <= max; i++)
+for (i = 0; i <= max; i++)
 {
 a[i] = i;
 }

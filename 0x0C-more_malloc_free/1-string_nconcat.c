@@ -34,10 +34,6 @@ while (s2[sizee] != '\0')
 {
 sizee++;
 }
-if (n >= sizee)
-{
-n = sizee;
-}
 p = malloc(sizeof(char) * (size + n + 1));
 if (p == 0)
 {
@@ -47,10 +43,10 @@ for (i = 0; i < size; i++)
 {
 p[i] = s1[i];
 }
-for (j = 0; j <= sizee; j++)
+for (j = 0; j < n; j++)
 {
-p[i + j] = s2[j];
+p[i++] = s2[j];
 }
-p[j] = '\0';
+p[i] = '\0';
 return (p);
 }

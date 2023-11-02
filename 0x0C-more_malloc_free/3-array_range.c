@@ -25,9 +25,9 @@ if (a == 0)
 return (0);
 }
 
-for (i = 0; i <= max; i++)
+for (i = 0; i <= max - min; i++)
 {
-a[i] = i;
+a[i] = min + i;
 }
 return (a);
 }

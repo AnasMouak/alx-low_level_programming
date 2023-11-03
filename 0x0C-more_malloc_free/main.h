@@ -3,8 +3,3 @@ char *string_nconcat(char *s1, char *s2, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size);
 int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-int _putchar(char c);
-_puts(const char *str);
-void printUnsignedLongLong(unsigned long long num);
-unsigned long long multiplyPositiveNumbers(unsigned long long num1, unsigned long long num2);
-bool isPositiveInteger(const char *str);

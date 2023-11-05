@@ -20,6 +20,11 @@ char *owner;
 
 /**
  * dog_t -Typedef for struct dog
+ *
+ * @name: name of dog
+ * @age: age of the dog
+ * @owner: dog owner
+ *
  */
 
 typedef struct dog

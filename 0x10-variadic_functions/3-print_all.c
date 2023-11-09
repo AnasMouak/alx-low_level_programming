@@ -10,6 +10,7 @@ void print_all(const char * const format, ...)
 {
 	va_list p;
 	unsigned int in, j;
+	char *s;
 	const char arg[] = "cifs";
 
 	va_start(p, format);
@@ -31,28 +32,22 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 			{
-				const char c = va_arg(p, int);
-
-				printf("%c", c);
+				printf("%c", va_arg(p, int));
 				break;
 			}
 			case 'i':
 			{
-				const int i = va_arg(p, int);
-
-				printf("%d", i);
+				printf("%d", va_arg(p, int));
 				break;
 			}
 			case 'f':
 			{
-				const double f = va_arg(p, double);
-
-				printf("%f", f);
+				printf("%f", va_arg(p, double));
 				break;
 			}
 			case 's':
 			{
-				const char *s = va_arg(p, char*);
+				s = va_arg(p, char*);
 				if (s)
 				{
 					printf("%s", s);

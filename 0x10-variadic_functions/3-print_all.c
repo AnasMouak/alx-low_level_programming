@@ -10,9 +10,9 @@ void print_all(const char * const format, ...)
 {
 	va_list p;
 	unsigned int in, j;
+	const char arg[] = "cifs";
 
 	va_start(p, format);
-	const char arg[] = "cifs";
 
 	in = 0;
 	while (format && format[in])

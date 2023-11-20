@@ -10,7 +10,7 @@ void free_listint2(listint_t **head)
 {
 	listint_t *p;
 
-	if (*head == 0)
+	if (head == 0)
 	{
 		return;
 	}
@@ -21,5 +21,5 @@ void free_listint2(listint_t **head)
 		free(*head);
 		*head = p;
 	}
-	*head = 0;
+	head = 0;
 }

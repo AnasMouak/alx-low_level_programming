@@ -21,13 +21,14 @@ int main(int ac, char **av)
     }
     
     file_from = open(av[1], O_RDONLY);
-    file_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
 
     if (file_from == -1)
     {
-        dprintf(2, "Error: Can't read from file %s\n", av[1]);
-        exit(98);
+	    dprintf(2, "Error: Can't read from file %s\n", av[1]);
+	    exit(98);
     }
+    
+    file_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
     if (file_to == -1)
     {
@@ -37,12 +38,14 @@ int main(int ac, char **av)
     b_re = read(file_from, buff, sizeof(buff));
     if (b_re == -1)
     {
-        return (-1);
+        dprintf(2, "Error: Can't read from file %s\n", av[1]);
+	exit(98);
     }
     b_wr = write(file_to, buff, b_re);
     if (b_wr == -1)
     {
-        return (-1);
+        dprintf(2, "Error: Can't write to %s\n", av[2]);
+	exit(99);
     }
 
     errorclose = close(file_from);

@@ -35,6 +35,8 @@ int main(int ac, char **av)
         dprintf(2, "Error: Can't write to %s\n", av[2]);
         exit(99);
     }
+    while (b_re == 1024)
+    {
     b_re = read(file_from, buff, sizeof(buff));
     if (b_re == -1)
     {
@@ -47,7 +49,7 @@ int main(int ac, char **av)
         dprintf(2, "Error: Can't write to %s\n", av[2]);
 	exit(99);
     }
-
+    }
     errorclose = close(file_from);
 
     if (errorclose == -1)

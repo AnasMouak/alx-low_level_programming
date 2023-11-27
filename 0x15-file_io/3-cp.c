@@ -36,13 +36,13 @@ int main(int ac, char **av)
         exit(99);
     }
     
-    b_re = read(file_from, buff, sizeof(buff));
+    b_re = read(file_from, buff, 1024);
     if (b_re == -1)
     {
         dprintf(2, "Error: Can't read from file %s\n", av[1]);
 	exit(98);
     }
-    while ((b_re = read(file_from, buff, sizeof(buff))) > 0)
+    while ((b_re = read(file_from, buff, 1024)) > 0)
     {
     b_wr = write(file_to, buff, b_re);
     if (b_wr == -1)

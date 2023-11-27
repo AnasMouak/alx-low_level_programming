@@ -33,7 +33,7 @@ int create_file(const char *filename, char *text_content)
 	text_content = '\0';
 	b_wr = write(fd, text_content, '\0');
 
-	if (!O_CREAT || b_wr == -1)
+	if (!O_CREAT || !b_wr)
 	{
 		return (-1);
 	}

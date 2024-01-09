@@ -35,16 +35,22 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (new_node);
 	}
 
-	while (ptr != 0 && i < idx)
+	while (ptr != 0 && i < idx - 1)
 	{
 		ptr = ptr->next;
 		i++;
 	}
 	if (ptr == 0)
 	{
-		free(new_node);
-		return (0);
+		ptr = *h;
+		while (ptr->next != NULL)
+			ptr = ptr->next;
+
+		ptr->next = new_node;
+		new_node->prev = ptr;
+		return new_node;
 	}
+
 	ptr2 = ptr->next;
 	ptr->next = new_node;
 	ptr2->prev = new_node;
@@ -52,4 +58,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->next = ptr2;
 
 	return (*h);
-i}
+}
+/**
+ * dlistint_len - Returns the number of elements in a doubly linked list.
+ * @h: Pointer to the head of the list.
+ * Return: Number of elements in the list.
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t len = 0;
+	while (h != NULL)
+	{
+		len++;
+		h = h->next;
+	}
+	return (len);
+}

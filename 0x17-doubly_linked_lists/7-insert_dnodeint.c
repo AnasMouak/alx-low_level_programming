@@ -56,16 +56,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 		ptr->next = new_node;
 		new_node->prev = ptr;
-		return new_node;
+		return (new_node);
 	}
 
 	ptr2 = ptr->next;
 	ptr->next = new_node;
-	ptr2->prev = new_node;
 	new_node->prev = ptr;
 	new_node->next = ptr2;
 
-	return (*h);
+	if (ptr2 != NULL)
+		ptr2->prev = new_node;
+
+	return (new_node);
 }
 /**
  * dlistint_len - Returns the number of elements in a doubly linked list.

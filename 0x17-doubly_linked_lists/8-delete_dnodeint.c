@@ -15,7 +15,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	unsigned int i = 0;
 	struct dlistint_s *ptr = *head;
-	struct dlistint_s *ptr2 = *head;
+	struct dlistint_s *ptr2;
 
 	if (*head == 0)
 	{
@@ -24,23 +24,28 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (index == 0)
 	{
 		*head = (*head)->next;
-		free(ptr2);
+		if (*head != NULL)
+			(*head)->prev = NULL;
+
+		free(ptr);
 		return (1);
 	}
 
-	while (ptr != 0 && i < index)
+	while (ptr != 0 && i < index - 1)
 	{
-		ptr = ptr2;
-		ptr2 = ptr2->next;
+		ptr = ptr->next;
 		i++;
 	}
-	if (ptr2 == 0)
+	if (ptr == 0 || ptr->next == 0)
 	{
 		return (-1);
 	}
-	ptr = ptr2->prev;
+	ptr2 = ptr->next;
 	ptr->next = ptr2->next;
-	ptr2->next->prev = ptr;
+	if (ptr2->next != 0)
+	{
+		ptr2->next->prev = ptr;
+	}
 	free(ptr2);
 	ptr2 = 0;
 

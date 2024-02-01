@@ -12,7 +12,7 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned int long i;
 	int first_pair = 1;
 
-	if (ht == 0)
+	if (ht == 0 || ht->array == 0)
 	{
 		return;
 	}

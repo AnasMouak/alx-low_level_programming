@@ -11,7 +11,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	unsigned int long i;
 	hash_node_t *tmp;
-	int first_pair = 1;
+	char first_pair = 1;
 
 	if (ht == 0 || ht->array == 0)
 	{

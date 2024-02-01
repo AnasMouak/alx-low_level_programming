@@ -11,7 +11,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	unsigned int long i;
 	hash_node_t *tmp;
-	char first_pair = 1;
+	char first_pair = 0;
 
 	if (ht == 0 || ht->array == 0)
 	{
@@ -23,12 +23,12 @@ void hash_table_print(const hash_table_t *ht)
 		tmp = ht->array[i];
 		while (tmp != 0)
 		{
-			if (!first_pair)
+			if (first_pair == 1)
 			{
 				printf(", ");
 			}
 		printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
-		first_pair = 0;
+		first_pair = 1;
 		tmp = tmp->next;
 		}
 	}
